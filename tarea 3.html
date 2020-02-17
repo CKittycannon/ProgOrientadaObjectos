@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<p id="demo"></p>
+
+<script>
+
+// create object
+var person = {
+    firstName: "Captain",
+    lastName: "Wonder",
+	money: 100,
+	id: 9876,
+	edad: 32,
+	fullName: function() {return this.firstName + " " + this.lastName;},
+	canBuy: function(n) {return this.money >= n;} 
+};
+
+var carro = {
+    marca: "Ni-san",
+	costo: 41648,
+	placas: "S13-948A-7B",
+	color: "AZUL",
+	focos: true,
+	nuevasPlacas: function(str) { this.placas = str; },
+	alternarFocos: function() { this.focos = !this.focos; }
+};
+
+var jugador = {
+	nick: "MrMattews",
+	ip: "73.31.32.112",
+	money: 0,
+	homeID: 432,
+	ticks: 24,
+	newNick: function(s) { this.nick = s; },
+	disconnectPlayer: function() { this.ip = ""; }
+};
+
+var krunker = {
+    players: 0,
+	maxPlayers: 10,
+	mapID: 8576,
+	serverName: "KrunkerServer",
+	hash: -123,
+	addPlayer: function() { players++; },
+	overpopulated: function() { return players > maxPlayers; }
+};
+
+var Tetris = {
+    sells: 2934875293,
+	red: "Rojo",
+	blue: "Azul",
+	green: "Verde",
+	yellow: "Amarillo",
+	getSells: function() { return sells; },
+	nameOf: function() { return this[1 + n]; }
+}
+
+
+// string that acumulates stuff
+var str = "";
+function log(txt) {
+    str += txt + "<br>";
+    document.getElementById('demo').innerHTML = str;
+}
+
+// next id printer
+function nextID() {
+    log("id: " + (person.id + 1));
+}
+
+
+// print
+//document.getElementById('demo').innerHTML = person.firstName;
+log("hello");
+log("Person: " + person.fullName());
+log("Money: " + person.money);
+nextID();
+log("");
+log("newplanet.ddns.net");
+log("Hola gamer vamos a jugar minecraft!");
+log("¿Qué te parece si lo descargamos en ESTE momento?");
+log("");
+log("Marca de carro: " + carro.marca);
+log("Servidor: " + krunker.serverName);
+log("IP detectada: " + jugador.ip);
+log("Nombre del color: " + Tetris["blue"]);
+
+</script>
+
+</body>
+</html> 
