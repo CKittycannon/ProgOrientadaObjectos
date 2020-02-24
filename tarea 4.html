@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<p id="demo"></p>
+
+<script>
+
+// string that acumulates stuff
+var str = "";
+function log(txt) {
+    str += txt + "<br>";
+    document.getElementById('demo').innerHTML = str;
+}
+log("hello");
+
+// class
+
+class Translate {
+
+	constructor(lang) {
+	    this.current = lang;
+		log("New language: " + lang);
+	}
+	
+	translate(str) {
+		log("Error translating: " + str);
+	}
+	
+	setLang(lang) {
+		this.current = lang;
+		log("New language: " + lang);
+	}
+
+}
+
+new Translate("español").translate("HELLO HOW ARE YOU");
+var t = new Translate("english");
+t.setLang("Hello!");
+new Translate("japanese");
+new Translate("esperanto").setLang("español");
+t = new Translate("chino");
+
+</script>
+
+</body>
+</html> 
